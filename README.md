@@ -9,7 +9,7 @@
 ;
 ## 기능 목록
 -[x] 입력받은 문자열에서 커스텀 구분자를 추출 (CustomDelimiter.extraction())  
--[ ] 문자열에서 //부터 /n까지 제거 (CustomDelimiter.remove())  
+-[x] 문자열에서 //부터 /n까지 제거 (CustomDelimiter.remove())  
 -[ ] 커스텀 구분자로 문자열에서 Split (CustomDelimiter.customSplit())  
 -[ ] 쉼표, 콜론으로 문자열에서 split (customDelimiter.defaultSplit())  
 -[ ] 추출한 값이 숫자나 음수가 아니면 Exception 출력   
