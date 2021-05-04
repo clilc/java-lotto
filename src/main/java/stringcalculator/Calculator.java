@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
+
+    private static final String INPUT_FORMULA = "계산식을 입력해주세요.";
+
     public int add(List<Integer> numbers) {
         int result = 0;
         for (int number:numbers){
@@ -13,8 +16,6 @@ public class Calculator {
     }
 
     public void execute() {
-        System.out.println("계식을 입력해주세요");
-
         Scanner scanner = new Scanner(System.in);
         String  formula = scanner.nextLine();
         List<Integer> numbers = null;
@@ -33,13 +34,7 @@ public class Calculator {
         if(stringDelimiter.getCustomDelimiter() == null){
             numbers = stringDelimiter.defaultSplit(formula);
         }
-        
         System.out.println("sum = " + add(numbers));
-    }
-
-    public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-        calculator.execute();
     }
 }
 

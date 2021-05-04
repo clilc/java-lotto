@@ -14,6 +14,6 @@
 -[x] 쉼표, 콜론으로 문자열에서 split (customDelimiter.defaultSplit())  
 -[x] 추출한 값이 숫자나 음수가 아니면 Exception 출력   
 -[x] 추출된 숫자의 합을 구함 (Calculator.add())  
--[ ] 문자열 계산기 실행(Calculator.execute())
+-[x] 문자열 계산기 실행(Calculator.execute())
 
 

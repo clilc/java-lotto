@@ -26,9 +26,4 @@ public class CalculatorTest {
         calculator.execute();
         Assertions.assertThat(calculator.add(numbers)).isEqualTo(6);
     }
-
-    @Test
-    void name() {
-        //BufferedInputStream bufferedInputStream = new BufferedInputStream();
-    }
 }

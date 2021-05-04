@@ -10,26 +10,26 @@ public class StringDelimiter {
 
     private String customDelimiter;
 
-    public void extraction(String str) {
-        if (str.split("//").length >= 2) {
-            this.customDelimiter = str.split("//")[1].split("\\\\n")[0];
+    public void extraction(String formula) {
+        if (formula.split("//").length >= 2) {
+            this.customDelimiter = formula.split("//")[1].split("\\\\n")[0];
         }
     }
 
-    public String remove(String str) {
-        return str.split("\\\\n")[1];
+    public String remove(String formula) {
+        return formula.split("\\\\n")[1];
     }
 
-    public List<Integer> customSplit(String str) {
-        String[] split = str.split(customDelimiter);
+    public List<Integer> customSplit(String formula) {
+        String[] splitFormula = formula.split(customDelimiter);
         List<Integer> numbers = new ArrayList<>();
-        //@\n1@2;3
-        for (String s : split) {
-            if (Pattern.matches("[0-9]*$", s)) {
-                Arrays.asList(numbers.add(Integer.parseInt(s)));
+
+        for (String splitValue : splitFormula) {
+            if (Pattern.matches("[0-9]*$", splitValue)) {
+                Arrays.asList(numbers.add(Integer.parseInt(splitValue)));
             }
-            if (!Pattern.matches("[0-9]*$", s)) {
-                String[] split1 = s.split(DEFAULT_DELIMITER);
+            if (!Pattern.matches("[0-9]*$", splitValue)) {
+                String[] split1 = splitValue.split(DEFAULT_DELIMITER);
                 for (String g : split1) {
                     Arrays.asList(numbers.add(Integer.parseInt(g)));
                 }
@@ -38,15 +38,13 @@ public class StringDelimiter {
         return numbers;
     }
 
-    public List<Integer> defaultSplit(String str) {
-        List<String> string1 = Arrays.asList(str.split(DEFAULT_DELIMITER));
-//        String join = String.join("", string1);
-//        List<String> string2 = Arrays.asList(join.split(""));
+    public List<Integer> defaultSplit(String formula) {
+        List<String> splitFormula = Arrays.asList(formula.split(DEFAULT_DELIMITER));
         List<Integer> result = new ArrayList<>();
-        for (String s : string1) {
-            if (!Pattern.matches("[0-9]*$", s))
+        for (String splitValue : splitFormula) {
+            if (!Pattern.matches("[0-9]*$", splitValue))
                 throw new RuntimeException("오류");
-            result.add(Integer.parseInt(s));
+            result.add(Integer.parseInt(splitValue));
         }
         return result;
     }
